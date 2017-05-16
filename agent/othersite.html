@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>other</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height:800px; width:500px; background-color:beige;"></div>
+    <iframe id="agent" height="0" width="0" src="./agent.html" style="display:none"></iframe>
+    <script type="text/javascript">
+
+        (function autoHeight() {
+            var b_width = Math.max(document.body.scrollWidth, document.body.clientWidth);
+            var b_height = Math.max(document.body.scrollHeight, document.body.clientHeight);
+            var agent = document.getElementById("agent");
+            agent.src = agent.src + "#" + b_width + "|" + b_height;  // 这里通过hash传递b.htm的宽高
+        })();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "iframe-height",
+  "version": "1.0.0",
+  "description": "A research to get height of iframe",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --server --files \"**/*.html,**/*.css,**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonxiang/iframe-height.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonxiang/iframe-height/issues"
+  },
+  "homepage": "https://github.com/brandonxiang/iframe-height#readme"
+}

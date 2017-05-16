@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    var other = window.parent.parent.document.getElementById("other");
+    var hash_url = window.location.hash;
+    if (hash_url.indexOf("#") >= 0) {
+        var hash_width = hash_url.split("#")[1].split("|")[0] + "px";
+        var hash_height = hash_url.split("#")[1].split("|")[1] + "px";
+        other.style.width = hash_width;
+        other.style.height = hash_height;
+    }
+
+</script>
