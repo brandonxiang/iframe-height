@@ -13,12 +13,11 @@
     </style>
 </head>
 <body>
-    <iframe id="other" src="./othersite.html" frameborder="0" scrolling="no" style="border:0px;"></iframe>
+    <iframe id="other" src="./resize.html" frameborder="0" scrolling="no" style="border:0px;"></iframe>
     <script>
 
         var frame = document.getElementById('other')
         window.addEventListener('message', function(e){
-            console.log(e.data)
             frame.style.height = e.data.height+'px'
             frame.style.width = e.data.width+'px'
         })
