@@ -14,14 +14,6 @@
 </head>
 <body>
     <div style="height:800px; width:500px; background-color:beige;"></div>
-    <script>
-        
-        window.onload = function sendMessage(){
-            var width = Math.max(document.body.scrollWidth,document.body.clientWidth)
-            var height = Math.max(document.body.scrollHeight,document.body.clientHeight)
-            window.parent.postMessage({height:height,width:width},'*')
-        }
-
-    </script>
+    <script src="./postHeight.js"></script>
 </body>
 </html>
