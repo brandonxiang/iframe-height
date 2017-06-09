@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <title>my-ios-iframe</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        #url-wrapper {
+            height: 100%;
+        }
+        
+        #url-wrapper iframe {
+            height: 100%;
+            width: 100%;
+        }
+        
+        #url-wrapper.ios {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch !important;
+            height: 100%;
+        }
+        
+        #url-wrapper.ios iframe {
+            height: 100%;
+            min-width: 100%;
+            width: 100px;
+            /**width: 100%;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="url-wrapper">
+    </div>
+    <!--<div style="width:100%;height:100px;background-color:red;">
+    </div>-->
+    <script>
+        function create_iframe(url) {
+
+            var wrapper = $('#url-wrapper');
+
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                wrapper.addClass('ios');
+                var scrolling = 'no';
+            } else {
+                var scrolling = 'yes';
+            }
+
+            $('<iframe>', {
+                src: url,
+                id: 'url',
+                frameborder: 0,
+                scrolling: scrolling
+            }).appendTo(wrapper);
+        }
+
+        create_iframe('https://hft.m.pinganfang.com/2.0/xf/loupan_share_detail?source=1&loupan_id=41006&agent_no=1050556138&parentCode=BBC98607-FCD5-4FAB-8A22-C32BDCCC32BB&from=singlemessage&isappinstalled=0')
+
+
+        function setIframeHeight(){
+            setTimeout(function () {
+                var iframeId = setInterval(function () {
+                        $("#url").css("height", $("#url").height());
+                        clearInterval(iframeId)
+                }, 1000)
+            }, 2000)
+        }
+        
+        setIframeHeight()
+
+        var _iframe = document.getElementById('url')
+        
+    </script>
+</body>
+
+</html>
